@@ -1,79 +1,108 @@
-#PHASE3_PROJECT 
+**PHASE3_PROJECT: SyriaTel Customer Churn** 
 
-##Problem Defination
+
+**Problem Defination**
 
 SyriaTel wants to predict customer churn using historical data. Additionally, they want to quantify the financial losses incurred by long-term customers who leave the service.
 
 
-##Business Understanding
+**Business Understanding**
 
 SyriaTel, a TelecommunicationsCompany is concerned about customer churn the phenomenon where customers stop using their services. Some long-term customers may generate lower revenue while still incurring service costs, potentially leading to revenue losses. Understanding the characteristics of customers who are likely to churn will help the company take preventive measures.
 
-##Data Preprocessing
+**Data Preprocessing**
+
 This section prepare the provided bigml data for analysis. We intend to do the following:
 
-###Dataset Overview - Load and understand the data
-Handling Missing Values using derived domain knowledge and imputation
-Data Cleaning e.g. standardizing categorical values, deriving useful date data, removing duplicates etc
-Dataset Overview
-It is imperative for us to understand the bigml dataset first i.e.:
+**Dataset Overview**
 
-The data structure e.g. available tables, their columns, data types and presence of missing values
-Establish the relevance of the data to our study
-Identify useful columns to focus on
-Data Understanding will prescribe subsequent cleaning steps to be done in the Data Cleaning subsection
+* Load and explore the dataset to understand its structure, including available tables, columns, data types, and missing values.
 
-###Python Libraries Initialization
+* Identify relevant data for analysis and determine which columns to focus on.
+
+**Handling Missing Values**
+
+Use domain knowledge and imputation techniques to manage missing values.
+
+**Data Cleaning**
+
+* Standardize categorical values.
+
+* Derive useful date-related data.
+
+* Remove duplicates and inconsistencies.
+
+**Python Libraries Initialization**
 
 First, we initialize common libraries we project to utilize in this exercise:
 
-pandas to create and manipulate dataframes
-seaborn and matplotlib to facilitate any requisite visualizations within the notebook
-numpy for mathematical calculations
-scikit-learn to provide tools for machine learning models, feature scaling, train-test-split and evaluation metrics.
-etc
-Data Loading
+* **pandas** to create and manipulate dataframes
 
-We then load the dataset into python as a dataframe and embark on a data understanding exercise.
+* **seaborn** and matplotlib to facilitate any requisite visualizations within the notebook
 
-###Data Understanding
+* **numpy** for mathematical calculations
 
+* **scikit-learn** to provide tools for machine learning models, feature scaling, train-test-split and evaluation metrics.
+
+**Data Understanding**
 
 
-###Exploratory Data Analysis
 
-We used Tableau to explore the data and established the following insights:
+**Exploratory Data Analysis**
 
-churn distribution
+ Used Notebook to explore the data and established the following insights:
+
+1.**churn distribution**
+
 The majority of the customers do not curn indicating an imbalanced dataset.
-![alt text](image-3.png)
+![churn d](https://github.com/user-attachments/assets/ef17f7e7-761d-4287-9089-e8f264f01104)
 
-Account length distribution for churned and non churned customers:
+
+2.**Account length distribution for churned and non churned customers**
 
 Both churn and non churned customers exist across various account lengths which shows that longer account lenngths result in churn.
-![alt text](image-4.png)
+![account length distribution](https://github.com/user-attachments/assets/c9f5dd4a-6050-4917-89ee-ed68a12097ad)
 
-correlation heatmap
+
+3. **correlation heatmap**
 
 churn is highly correlated with customer service calls which indicates that Customers who makes more service calls are more likely to churn.
-![alt text](image-5.png)
+
+![heatmap](https://github.com/user-attachments/assets/f1b111b1-a3d1-4608-8314-9167d6f096d9)
 
 
-##Conclusion
- 1. Customer services calls are strongly correlated with churn which indicates customers who make more calls to customer service are more likely to leave this suggests dissatisfaction with SyrialTel's support services.
+**Model Performance & Evaluation**
 
-2. call usage has weak correlation with churn this might be as a result of service quality and pricing.
+We evaluated multiple models for churn prediction. Key findings include:
 
-3. All the model had the same recall of 74% which means all the model detected most of the customers who actually churned.
+* All models achieved a recall of 74%, meaning they successfully detected most of the customers who actually churned.
 
-##Recommendation
+* The Decision Tree model performed the best with 92% accuracy and 74% precision.
 
- Improve customer support by identifying common customer complaints from high frequently callers.
+**Recommendation**
 
-2. Enhance customer engagement by offering customer support for those making frequent service calls.
+1. **Improve Customer Support**
 
-3.Handle class imbalance by using techniques like class weight to improve model accuracy since the churned customer are fewer.
+Identify common customer complaints from high-frequency callers and address their concerns promptly.
 
-4. The best model was Decision Tree Model with 92% accuracy and precision of 74%.
+2. **Enhance Customer Engagement**
 
-5. If the company wants to catch churners they should increase recall to 80-85 or even 90%.
+Offer proactive support to customers making frequent service calls to improve satisfaction and retention.
+
+3. **Handle Class Imbalance**
+
+Use techniques like class weighting to improve model accuracy, as churned customers are fewer.
+
+4. **Increase Model Recall**
+
+If the company aims to capture more churners, recall should be improved to 80-85% or even 90%.
+
+**Conclusion**
+
+ * Frequent customer service calls are a strong indicator of churn, highlighting customer dissatisfaction.
+
+* The Decision Tree model was the best-performing model with 92% accuracy.
+
+* SyriaTel should improve customer support and engagement to reduce churn rates and enhance customer retention.
+
+
